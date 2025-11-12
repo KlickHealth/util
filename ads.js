@@ -18,14 +18,13 @@ const Scroll = ({
   event = 'animationEnd webkitAnimationEnd mozAnimationEnd',
   on,
   slider = 8,
-  arrow,
   delay,
   speed,
   stopOnMove = true,
   stopOnClick = false,
 }) => {
   let sBox = document.querySelector('.isiScroll')
-  if (!sBox) return setTimeout(Scroll, 100, { event, on, slider, arrow, delay, speed })
+  if (!sBox) return setTimeout(Scroll, 100, { event, on, slider, delay, speed })
 
   const html = sBox.innerHTML
   sBox.innerHTML = ''
@@ -66,9 +65,7 @@ const Scroll = ({
   when(sTab, 'mousedown', e => elY = at(e) - (el = e.target).offsetTop)
   when(document, 'mousemove', e => el !== null && (sEl.scrollTop = (at(e) - elY) / sRatio))
   when(document, 'mouseup', _ => el = stopOnClick && scroll.stop() || null)
-  if (arrow) {
-    const dir = by => e => scroll.by(by)
-    when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(-25))
-    when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(25))
-  }
+  const dir = by => e => scroll.by(by)
+  when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(-25))
+  when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(25))
 }
