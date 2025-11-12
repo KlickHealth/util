@@ -12,7 +12,7 @@ when(window, 'load', _ => Promise.all([
 
 const box = document.querySelector('.banner')
 when(box, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
-document.querySelector('.toggle_btn')?.addEventListener('click', _ => box?.classList.toggle('active'))
+document.querySelector('.isiToggle')?.addEventListener('click', _ => box?.classList.toggle('active'))
 
 const Scroll = ({
   event = 'animationEnd webkitAnimationEnd mozAnimationEnd',
