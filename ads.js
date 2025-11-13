@@ -11,7 +11,6 @@ when(window, 'load', _ => {
     img.src = img.dataset.src
   }))).then(load)
   
-  when(isi, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
   when(document.querySelector('.isiToggle'), 'click', _ =>
     document.querySelector('.banner')?.classList.toggle('active'))
 })
@@ -56,6 +55,7 @@ const Scroll = ({
   scroll.bar()
 
   when(sBox, 'click', e => e.target.tagName !== 'a' && e.stopPropagation())
+  when(isi, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
   when(sBox, event, scroll.bar)
   when(sEl, 'scroll', scroll.bar)
   when(sEl, `${stopOnClick ? 'click touchstart' : ''} ${stopOnMove ? 'touchmove' : ''} mousewheel DOMMouseScroll`, scroll.stop)
