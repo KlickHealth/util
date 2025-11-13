@@ -10,9 +10,9 @@ when(window, 'load', _ => Promise.all([
   img.src = img.dataset.src
 }))).then(load))
 
-const box = document.querySelector('.banner')
-when(box, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
-document.querySelector('.isiToggle')?.addEventListener('click', _ => box?.classList.toggle('active'))
+when(isi, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
+document.querySelector('.isiToggle')?.addEventListener('click', _ => 
+  document.querySelector('.banner')?.classList.toggle('active'))
 
 const Scroll = ({
   event = 'animationEnd webkitAnimationEnd mozAnimationEnd',
