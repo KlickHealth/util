@@ -71,7 +71,7 @@ body[class='320x50'] br[class]:not([class='320x50']) {
 .isi {
   display: grid;
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
   z-index: 99;
